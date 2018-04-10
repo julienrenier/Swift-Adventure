@@ -8,5 +8,4 @@
 
 import Foundation
 
-print("Hello, World!")
-
+print("Bonjour, bienvenue dans Swift Adventure !")
