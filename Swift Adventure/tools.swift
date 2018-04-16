@@ -9,7 +9,7 @@
 import Foundation
 
 func getClasse() -> ClasseName {
-    print("Combattant, Nain ou colosse ?")
+    print("Combattant, Nain ou Colosse ?")
     switch readLine()?.lowercased() {
     case "combattant":
         return .combattant
@@ -22,9 +22,16 @@ func getClasse() -> ClasseName {
     }
 }
 
-func getName() -> String {
-    if let name = readLine() {
-        return name
+func getString() -> String {
+    if let string = readLine() {
+        return string
+    }
+    exit(84)
+}
+
+func getInt() -> Int {
+    if let int = Int(readLine()!) {
+        return int
     }
     exit(84)
 }

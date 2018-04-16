@@ -23,7 +23,26 @@ class Game {
         print("\nCe jeu est un jeu multijoueurs, il va donc falloir que vous me passiez vos noms.")
         for _ in 0..<number {
             print("\nJoueur \(players.count + 1): ", terminator: "")
-            players.append(Player(getName()))
+            players.append(Player(getString()))
+        }
+    }
+    
+    func play() {
+        var end = false
+        var loop = 0
+        
+        while (!end) {
+            if loop != 0 {
+                //TODO
+            }
+            for player in players {
+                let champion = player.selectCharacter()
+                let (player, target) = player.selectTarget(ennemies: players)
+                if champion.attack(target: target) {
+                    player.characters.remove(at: player.characters.index(where: { $0 == target })!)
+                }
+            }
+            
         }
     }
 

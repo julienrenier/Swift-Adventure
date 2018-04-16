@@ -9,6 +9,9 @@
 import Foundation
 
 class Colosse: Character {
+    
+    // MARK: - Initialisation
+    
     init(_ name: String) {
         super.init(name, classe: .colosse, health: 300, weaponDamage: 2)
     }

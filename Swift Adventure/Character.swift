@@ -17,6 +17,18 @@ class Character {
     let classe: ClasseName
     var health: Int
     var weaponDamage: Int
+    
+    // MARK: - Gameplay
+    
+    func attack(target: Character) -> Bool {
+        print("\(name) va attaquer \(target.name) et lui infliger \(weaponDamage) dommage.")
+        target.health -= weaponDamage
+        if (target.health <= 0) {
+            print("La cible est morte!")
+            return true
+        }
+        return false
+    }
 
     // MARK: - Initialisation
 
@@ -25,5 +37,21 @@ class Character {
         self.classe = classe
         self.health = health
         self.weaponDamage = weaponDamage
+    }
+    
+    //MARK: - Operators
+    
+    static func == (left: Character, right: Character) -> Bool {
+        if left.name == right.name {
+            return true
+        }
+        return false
+    }
+    
+    static func != (left: Character, right: Character) -> Bool {
+        if left.name != right.name {
+            return true
+        }
+        return false
     }
 }

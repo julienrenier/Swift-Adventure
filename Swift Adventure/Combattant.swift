@@ -10,6 +10,8 @@ import Foundation
 
 class Combattant: Character {
 
+    // MARK: - Initialisation
+    
     init(_ name: String) {
         super.init(name, classe: .combattant, health: 100, weaponDamage: 10)
     }
