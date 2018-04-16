@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  Nain.swift
 //  Swift Adventure
 //
 //  Created by Julien Renier on 4/10/18.
@@ -8,4 +8,9 @@
 
 import Foundation
 
-let game = Game()
+class Nain: Character {
+
+    init(_ name: String) {
+        super.init(name, classe: .nain, health: 50, weaponDamage: 15)
+    }
+}
