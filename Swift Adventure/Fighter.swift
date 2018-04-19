@@ -13,6 +13,6 @@ class Fighter: Character {
     // MARK: - Initialisation
     
     init(_ name: String) {
-        super.init(name, classe: .combattant, health: 100, weaponDamage: 10)
+        super.init(name, classe: .fighter, health: 100, weaponDamage: 10)
     }
 }

@@ -59,13 +59,13 @@ class Player {
         for number in 0..<3 {
             print("\nLa classe du Membre numero \(number + 1): ")
             switch getClasse() {
-            case .combattant:
+            case .fighter:
                 print("Quel est le nom de ce valereux combattant ?")
                 characters.append(Fighter(getUniqueString(strings: Character.names)))
-            case .nain:
+            case .dwarf:
                 print("Il faut lui trouver un petit nom.")
                 characters.append(Dwarf(getUniqueString(strings: Character.names)))
-            case .colosse:
+            case .colossus:
                 print("Wow il faut lui trouver un nom a sa taille!")
                 characters.append(Colossus(getUniqueString(strings: Character.names)))
             }

@@ -10,13 +10,13 @@ import Foundation
 
 class Character {
     let name: String
-    let classe: ClasseName
+    let classe: ClassName
     var health: Int
     var weaponDamage: Int
     static var names = [String]()
     
-    enum ClasseName: String {
-        case combattant, nain, colosse
+    enum ClassName: String {
+        case fighter, dwarf, colossus
     }
     
     // MARK: - Gameplay
@@ -45,7 +45,7 @@ class Character {
 
     // MARK: - Initialisation
 
-    init(_ name: String, classe: ClasseName, health: Int, weaponDamage: Int) {
+    init(_ name: String, classe: ClassName, health: Int, weaponDamage: Int) {
         self.name = name
         self.classe = classe
         self.health = health

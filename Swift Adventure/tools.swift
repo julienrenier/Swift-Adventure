@@ -22,10 +22,10 @@ import Foundation
 //Mage
 
 
-func getClasse() -> Character.ClasseName? {
+func getClasse() -> Character.ClassName? {
     print("Combattant, Nain ou Colosse ?")
     let input = readLine()?.trimmingCharacters(in: .whitespaces).lowercased()
-    guard let className = Character.ClasseName(rawValue: input!) else {
+    guard let className = Character.ClassName(rawValue: input!) else {
         return getClasse()
     }
     return className
