@@ -19,6 +19,10 @@ class Character {
         case fighter = "Combattant", dwarf = "Nain", colossus = "Colosse", magus = "Mage"
     }
     
+    enum Faction {
+        case enemy, ally
+    }
+    
     // MARK: - Gameplay
     
     ///

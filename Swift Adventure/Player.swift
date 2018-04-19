@@ -45,7 +45,7 @@ class Player {
         return selectCharacter()
     }
     
-    func selectTarget(ennemies players: [Player]) -> (Player, Character) {
+    func selectTarget(on players: [Player], faction: Character.Faction) -> (Player, Character) {
         print("\nChoisissez votre cible 🎯")
         for player in players where player != self {
             player.printInfo()
@@ -59,7 +59,7 @@ class Player {
             }
         }
         print("Ce n'est pas une cible possible, réessaye.")
-        return selectTarget(ennemies: players)
+        return selectTarget(on: players, faction: faction)
     }
 
     // MARK: - Initialisation

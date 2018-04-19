@@ -35,7 +35,8 @@ class Game {
         while (end > 1) {
             for player in players {
                 let champion = player.selectCharacter()
-                let (ennemie, target) = player.selectTarget(ennemies: players)
+                let (ennemie, target) = champion.classe == .magus ? player.selectTarget(on: players, faction: .ally)
+                    : player.selectTarget(on: players, faction: .enemy)
                 champion.evolve()
                 if champion.attack(target: target) {
                     ennemie.characters.remove(at: ennemie.characters.index(where: { $0 == target })!)
