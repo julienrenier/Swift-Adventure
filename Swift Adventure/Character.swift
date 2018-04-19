@@ -16,7 +16,7 @@ class Character {
     static var names = [String]()
     
     enum ClassName: String {
-        case fighter, dwarf, colossus
+        case fighter = "Combattant", dwarf = "Nain", colossus = "Colosse"
     }
     
     // MARK: - Gameplay
