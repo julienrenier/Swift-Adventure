@@ -1,5 +1,5 @@
 //
-//  Colosse.swift
+//  Combattant.swift
 //  Swift Adventure
 //
 //  Created by Julien Renier on 4/10/18.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Colosse: Character {
-    
+class Fighter: Character {
+
     // MARK: - Initialisation
     
     init(_ name: String) {
-        super.init(name, classe: .colosse, health: 300, weaponDamage: 2)
+        super.init(name, classe: .combattant, health: 100, weaponDamage: 10)
     }
 }

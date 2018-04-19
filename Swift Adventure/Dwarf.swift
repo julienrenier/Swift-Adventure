@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Nain: Character {
+class Dwarf: Character {
 
     // MARK: - Initialisation
     
