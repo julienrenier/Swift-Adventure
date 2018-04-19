@@ -17,5 +17,5 @@ import Foundation
 //Mage
 
 
-let game = Game(playerNumber: 3)
+let game = Game()
 game.play()

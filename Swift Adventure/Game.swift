@@ -15,6 +15,7 @@ class Game {
 
     private func printLunch() {
         print("\nBonjour, bienvenue dans Swift Adventure! 🗺")
+        print("Ecrivez le nombre de personnes qui prendront part à cette partie.")
     }
     
     private func loading() {
@@ -27,14 +28,6 @@ class Game {
     }
 
     // MARK: - Gameplay
-
-    private func addPlayer(number: Int) {
-        print("\nCe jeu est un jeu multijoueurs, il va donc falloir que vous me passiez vos noms.")
-        for _ in 0..<number {
-            print("\nJoueur \(players.count + 1): ", terminator: "")
-            players.append(Player(Game.getUniqueString()))
-        }
-    }
     
     func play() {
         var end = players.count
@@ -57,28 +50,42 @@ class Game {
         }
     }
     
+    // MARK: - Getter
+    
     static func getClasse() -> Character.ClassName {
         print("Combattant, Nain ou Colosse ?")
-        let input = readLine()?.trimmingCharacters(in: .whitespaces).capitalized
-        guard let className = Character.ClassName(rawValue: input!) else {
+        guard let input = readLine()?.trimmingCharacters(in: .whitespaces).capitalized,
+            let className = Character.ClassName(rawValue: input) else {
             return getClasse()
         }
         return className
     }
     
-    static func getUniqueString(strings: [String] = [String]()) -> String {
-        if let newString = readLine(), !strings.contains(newString) {
-            return newString.trimmingCharacters(in: .whitespaces)
+    static func getUniqueName(strings: [String] = [String]()) -> String {
+        if let newString = readLine()?.trimmingCharacters(in: .whitespaces).capitalized,
+            newString != "", !strings.contains(newString) {
+            return newString
         }
-        print("Ce nom existe déjà, réessaye.")
-        return getUniqueString(strings: strings)
+        print("Ce nom n'est pas disponible, réessaye.")
+        return getUniqueName(strings: strings)
     }
 
     // MARK: - Initialisation
+    
+    private func addPlayer(number: Int) {
+        print("\nTrès bien, il va donc falloir que vous me passiez vos noms.")
+        for _ in 0..<number {
+            print("\nJoueur \(players.count + 1): ", terminator: "")
+            players.append(Player(Game.getUniqueName()))
+        }
+    }
 
-    //TODO minimum player ask
-    init(playerNumber: Int) {
+    init() {
         printLunch()
+        guard let input = readLine(), let playerNumber = Int(input), playerNumber > 1 else {
+            print("Le jeu ne peut pas s'initialiser avec cette valeur")
+            exit(84)
+        }
         addPlayer(number: playerNumber)
         for player in players {
             player.printInfo()

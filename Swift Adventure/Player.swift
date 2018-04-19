@@ -62,13 +62,13 @@ class Player {
             switch Game.getClasse() {
             case .fighter:
                 print("Quel est le nom de ce valereux combattant ?")
-                characters.append(Fighter(Game.getUniqueString(strings: Character.names)))
+                characters.append(Fighter(Game.getUniqueName(strings: Character.names)))
             case .dwarf:
                 print("Il faut lui trouver un petit nom.")
-                characters.append(Dwarf(Game.getUniqueString(strings: Character.names)))
+                characters.append(Dwarf(Game.getUniqueName(strings: Character.names)))
             case .colossus:
                 print("Wow il faut lui trouver un nom a sa taille!")
-                characters.append(Colossus(Game.getUniqueString(strings: Character.names)))
+                characters.append(Colossus(Game.getUniqueName(strings: Character.names)))
             }
         }
     }
