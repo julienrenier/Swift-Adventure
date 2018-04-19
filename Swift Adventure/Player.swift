@@ -24,7 +24,7 @@ class Player {
     func selectCharacter() -> Character {
         print("\nChoisissez votre champion pour ce tour \(name) !")
         printInfo()
-        let championName = getUniqueString()
+        let championName = Game.getUniqueString()
         if let champion = characters.first(where: { (character) -> Bool in
             return character.name.lowercased() == championName.lowercased()
         }) {
@@ -40,7 +40,7 @@ class Player {
         for player in players where player.name != name {
             player.printInfo()
         }
-        let championName = getUniqueString()
+        let championName = Game.getUniqueString()
         for player in players where player != self {
             if let target = player.characters.first(where: { (character) -> Bool in
                 return character.name.lowercased() == championName.lowercased()
@@ -58,16 +58,19 @@ class Player {
         print("\nDis moi en plus sur ton equipe.")
         for number in 0..<3 {
             print("\nLa classe du Membre numero \(number + 1): ")
-            switch getClasse() {
-            case .fighter:
+            switch Game.getClasse() {
+            case .fighter?:
                 print("Quel est le nom de ce valereux combattant ?")
-                characters.append(Fighter(getUniqueString(strings: Character.names)))
-            case .dwarf:
+                characters.append(Fighter(Game.getUniqueString(strings: Character.names)))
+            case .dwarf?:
                 print("Il faut lui trouver un petit nom.")
-                characters.append(Dwarf(getUniqueString(strings: Character.names)))
-            case .colossus:
+                characters.append(Dwarf(Game.getUniqueString(strings: Character.names)))
+            case .colossus?:
                 print("Wow il faut lui trouver un nom a sa taille!")
-                characters.append(Colossus(getUniqueString(strings: Character.names)))
+                characters.append(Colossus(Game.getUniqueString(strings: Character.names)))
+            case .none:
+                //TODO
+                break
             }
         }
     }

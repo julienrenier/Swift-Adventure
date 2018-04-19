@@ -32,7 +32,7 @@ class Game {
         print("\nCe jeu est un jeu multijoueurs, il va donc falloir que vous me passiez vos noms.")
         for _ in 0..<number {
             print("\nJoueur \(players.count + 1): ", terminator: "")
-            players.append(Player(getUniqueString()))
+            players.append(Player(Game.getUniqueString()))
         }
     }
     

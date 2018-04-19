@@ -8,12 +8,8 @@
 
 import Foundation
 
-//mettre dans game static
-
-
 //TODO
 //promptClass
-//Que anglais
 //Ajouter index et racourcir le jeu
 //Ajouter des couleurs/surbrillance/gras
 //Doc
