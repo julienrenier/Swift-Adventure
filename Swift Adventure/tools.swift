@@ -8,30 +8,33 @@
 
 import Foundation
 
-func getClasse() -> ClasseName {
+//mettre dans game static
+
+
+//TODO
+//promptClass
+//Que anglais
+//Ajouter index et racourcir le jeu
+//Ajouter des couleurs/surbrillance/gras
+//Doc
+//Github
+//Descriptif personnage
+//Mage
+
+
+func getClasse() -> Character.ClasseName? {
     print("Combattant, Nain ou Colosse ?")
-    switch readLine()?.lowercased() {
-    case "combattant":
-        return .combattant
-    case "nain":
-        return .nain
-    case "colosse":
-        return .colosse
-    default:
-        exit(84)
+    let input = readLine()?.trimmingCharacters(in: .whitespaces).lowercased()
+    guard let className = Character.ClasseName(rawValue: input!) else {
+        return getClasse()
     }
+    return className
 }
 
-func getString() -> String {
-    if let string = readLine() {
-        return string
+func getUniqueString(strings: [String] = [String]()) -> String {
+    if let newString = readLine(), !strings.contains(newString) {
+        return newString.trimmingCharacters(in: .whitespaces)
     }
-    exit(84)
-}
-
-func getInt() -> Int {
-    if let int = Int(readLine()!) {
-        return int
-    }
-    exit(84)
+    print("Ce nom existe déjà, réessaye.")
+    return getUniqueString(strings: strings)
 }

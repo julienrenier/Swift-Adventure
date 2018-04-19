@@ -8,5 +8,5 @@
 
 import Foundation
 
-let game = Game()
+let game = Game(playerNumber: 2)
 game.play()

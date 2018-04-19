@@ -9,50 +9,63 @@
 import Foundation
 
 class Game {
-    var players = [Player]()
+    private var players = [Player]()
 
     // MARK: - Interface
 
-    func printLunch() {
+    private func printLunch() {
         print("\nBonjour, bienvenue dans Swift Adventure! 🗺")
+    }
+    
+    private func loading() {
+        print("\nChargement..")
+        for _ in 0...25 {
+            print("*", terminator: "")
+            usleep(100000)
+        }
+        print("")
     }
 
     // MARK: - Gameplay
 
-    func addPlayer(number: Int) {
+    private func addPlayer(number: Int) {
         print("\nCe jeu est un jeu multijoueurs, il va donc falloir que vous me passiez vos noms.")
         for _ in 0..<number {
             print("\nJoueur \(players.count + 1): ", terminator: "")
-            players.append(Player(getString()))
+            players.append(Player(getUniqueString()))
         }
     }
     
     func play() {
-        var end = false
-        var loop = 0
+        var end = players.count
         
-        while (!end) {
-            if loop != 0 {
-                //TODO
-            }
+        while (end > 1) {
             for player in players {
                 let champion = player.selectCharacter()
-                let (player, target) = player.selectTarget(ennemies: players)
+                let (ennemie, target) = player.selectTarget(ennemies: players)
+                champion.evolve()
                 if champion.attack(target: target) {
-                    player.characters.remove(at: player.characters.index(where: { $0 == target })!)
+                    ennemie.characters.remove(at: ennemie.characters.index(where: { $0 == target })!)
+                    if ennemie.characters.isEmpty {
+                        end -= 1
+                    }
                 }
             }
-            
+        }
+        if let winner = players.first {
+            print("Bravo \(winner.name) la victoire vous appartient.")
         }
     }
 
     // MARK: - Initialisation
 
-    init(playerNumber: Int = 2) {
+    //TODO minimum player ask
+    init(playerNumber: Int) {
         printLunch()
         addPlayer(number: playerNumber)
         for player in players {
             player.printInfo()
         }
+        loading()
     }
 }

@@ -22,48 +22,52 @@ class Player {
     }
     
     func selectCharacter() -> Character {
-        print("Choisissez votre champion pour ce tour \(name) !")
+        print("\nChoisissez votre champion pour ce tour \(name) !")
         printInfo()
-        let championName = getString()
+        let championName = getUniqueString()
         if let champion = characters.first(where: { (character) -> Bool in
-            return character.name == championName
+            return character.name.lowercased() == championName.lowercased()
         }) {
+            print("\(champion.name) combattra pour vous.")
             return champion
         }
-        exit(84)
+        print("Ce n'est pas un champion possible, réessaye.")
+        return selectCharacter()
     }
     
     func selectTarget(ennemies players: [Player]) -> (Player, Character) {
+        print("\nChoisissez votre cible")
         for player in players where player.name != name {
             player.printInfo()
         }
-        let championName = getString()
+        let championName = getUniqueString()
         for player in players where player != self {
             if let target = player.characters.first(where: { (character) -> Bool in
-                return character.name == championName
+                return character.name.lowercased() == championName.lowercased()
             }) {
                 return (player, target)
             }
         }
-        exit(84)
+        print("Ce n'est pas une cible possible, réessaye.")
+        return selectTarget(ennemies: players)
     }
 
     // MARK: - Gameplay
 
     func createAllCharacters() {
-        print("\nDis moi en plus sur ton equipe.\n")
+        print("\nDis moi en plus sur ton equipe.")
         for number in 0..<3 {
             print("\nLa classe du Membre numero \(number + 1): ")
             switch getClasse() {
             case .combattant:
                 print("Quel est le nom de ce valereux combattant ?")
-                characters.append(Combattant(getString()))
+                characters.append(Combattant(getUniqueString(strings: Character.names)))
             case .nain:
                 print("Il faut lui trouver un petit nom.")
-                characters.append(Nain(getString()))
+                characters.append(Nain(getUniqueString(strings: Character.names)))
             case .colosse:
                 print("Wow il faut lui trouver un nom a sa taille!")
-                characters.append(Colosse(getString()))
+                characters.append(Colosse(getUniqueString(strings: Character.names)))
             }
         }
     }
@@ -78,14 +82,14 @@ class Player {
     // MARK: Operators
     
     static func == (left: Player, right: Player) -> Bool {
-        if left.name == right.name {
+        if left.name.lowercased() == right.name.lowercased() {
             return true
         }
         return false
     }
     
     static func != (left: Player, right: Player) -> Bool {
-        if left.name != right.name {
+        if left.name.lowercased() != right.name.lowercased() {
             return true
         }
         return false
