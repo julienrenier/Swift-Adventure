@@ -8,10 +8,5 @@
 
 import Foundation
 
-//TODO
-//Ajouter index et racourcir le jeu
-//Doc
-
-
 let game = Game()
 game.play()

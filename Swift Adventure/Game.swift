@@ -31,6 +31,7 @@ class Game {
     
     func play() {
         var end = players.count
+        var turns = 1
         
         while (end > 1) {
             for player in players where end > 1 {
@@ -45,9 +46,11 @@ class Game {
                     }
                 }
             }
+            turns += 1
         }
         if let winner = players.first {
             print("\nBravo \(winner.name) la victoire vous appartient. 🏅")
+            print("Cette partie a pris \(turns) tours")
         }
     }
     
