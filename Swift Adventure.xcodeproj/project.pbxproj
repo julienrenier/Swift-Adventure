@@ -14,7 +14,6 @@
 		09921D95207CCA4A00C7DEA6 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D94207CCA4A00C7DEA6 /* Game.swift */; };
 		09921D97207CFDC700C7DEA6 /* Dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D96207CFDC700C7DEA6 /* Dwarf.swift */; };
 		09921D99207CFE4600C7DEA6 /* Colossus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D98207CFE4600C7DEA6 /* Colossus.swift */; };
-		09921D9C207D3EDB00C7DEA6 /* tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D9B207D3EDB00C7DEA6 /* tools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +37,6 @@
 		09921D94207CCA4A00C7DEA6 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		09921D96207CFDC700C7DEA6 /* Dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarf.swift; sourceTree = "<group>"; };
 		09921D98207CFE4600C7DEA6 /* Colossus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colossus.swift; sourceTree = "<group>"; };
-		09921D9B207D3EDB00C7DEA6 /* tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,6 @@
 			children = (
 				09921D86207CB9A600C7DEA6 /* main.swift */,
 				09921D8D207CB9DF00C7DEA6 /* Player.swift */,
-				09921D9B207D3EDB00C7DEA6 /* tools.swift */,
 				09921D8F207CBF5900C7DEA6 /* Character.swift */,
 				09921D98207CFE4600C7DEA6 /* Colossus.swift */,
 				09921D96207CFDC700C7DEA6 /* Dwarf.swift */,
@@ -147,7 +144,6 @@
 				09921D97207CFDC700C7DEA6 /* Dwarf.swift in Sources */,
 				09921D8E207CB9DF00C7DEA6 /* Player.swift in Sources */,
 				09921D87207CB9A600C7DEA6 /* main.swift in Sources */,
-				09921D9C207D3EDB00C7DEA6 /* tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

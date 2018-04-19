@@ -8,5 +8,14 @@
 
 import Foundation
 
+//TODO
+//promptClass
+//Ajouter index et racourcir le jeu
+//Ajouter des couleurs/surbrillance/gras
+//Doc
+//Descriptif personnage
+//Mage
+
+
 let game = Game(playerNumber: 3)
 game.play()
