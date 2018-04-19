@@ -21,12 +21,13 @@ class Player {
         }
     }
     
+    // MARK: - Selector
+    
     func selectCharacter() -> Character {
         print("\nChoisissez votre champion pour ce tour \(name) !")
         printInfo()
-        let championName = Game.getUniqueString()
-        if let champion = characters.first(where: { (character) -> Bool in
-            return character.name.lowercased() == championName.lowercased()
+        if let championName = readLine(), let champion = characters.first(where: { (character) -> Bool in
+            return character.name.lowercased() == championName.trimmingCharacters(in: .whitespaces).lowercased()
         }) {
             print("\(champion.name) combattra pour vous.")
             return champion
@@ -36,14 +37,14 @@ class Player {
     }
     
     func selectTarget(ennemies players: [Player]) -> (Player, Character) {
-        print("\nChoisissez votre cible")
-        for player in players where player.name != name {
+        print("\nChoisissez votre cible 🎯")
+        for player in players where player != self {
             player.printInfo()
         }
-        let championName = Game.getUniqueString()
+        let championName = readLine()
         for player in players where player != self {
-            if let target = player.characters.first(where: { (character) -> Bool in
-                return character.name.lowercased() == championName.lowercased()
+            if let championName = championName, let target = player.characters.first(where: { (character) -> Bool in
+                return character.name.lowercased() == championName.trimmingCharacters(in: .whitespaces).lowercased()
             }) {
                 return (player, target)
             }
@@ -55,22 +56,19 @@ class Player {
     // MARK: - Gameplay
 
     func createAllCharacters() {
-        print("\nDis moi en plus sur ton equipe.")
+        print("\nDis moi en plus sur ton equipe. ")
         for number in 0..<3 {
-            print("\nLa classe du Membre numero \(number + 1): ")
+            print("\nLa classe du membre numero \(number + 1): ")
             switch Game.getClasse() {
-            case .fighter?:
+            case .fighter:
                 print("Quel est le nom de ce valereux combattant ?")
                 characters.append(Fighter(Game.getUniqueString(strings: Character.names)))
-            case .dwarf?:
+            case .dwarf:
                 print("Il faut lui trouver un petit nom.")
                 characters.append(Dwarf(Game.getUniqueString(strings: Character.names)))
-            case .colossus?:
+            case .colossus:
                 print("Wow il faut lui trouver un nom a sa taille!")
                 characters.append(Colossus(Game.getUniqueString(strings: Character.names)))
-            case .none:
-                //TODO
-                break
             }
         }
     }

@@ -36,7 +36,7 @@ class Character {
     
     //config pourcentage
     func evolve() {
-        if arc4random_uniform(100) >= 80 {
+        if arc4random_uniform(100) >= 75 {
             let bonus = arc4random_uniform(4) + 1
             weaponDamage += bonus.hashValue
             print("Chanceux ! \(name) à gagné \(bonus) points de dommage. 🎁")
