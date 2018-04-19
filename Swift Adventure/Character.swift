@@ -16,7 +16,7 @@ class Character {
     static var names = [String]()
     
     enum ClassName: String {
-        case fighter = "Combattant", dwarf = "Nain", colossus = "Colosse"
+        case fighter = "Combattant", dwarf = "Nain", colossus = "Colosse", magus = "Mage"
     }
     
     // MARK: - Gameplay
@@ -39,7 +39,7 @@ class Character {
         if arc4random_uniform(100) >= 75 {
             let bonus = arc4random_uniform(4) + 1
             weaponDamage += bonus.hashValue
-            print("Chanceux ! \(name) à gagné \(bonus) points de dommage. 🎁")
+            print("Chanceux ! \(name) à gagné \(bonus) points sur son arme. 🎁")
         }
     }
 

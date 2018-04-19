@@ -13,6 +13,6 @@ class Dwarf: Character {
     // MARK: - Initialisation
     
     init(_ name: String) {
-        super.init(name, classe: .dwarf, health: 50, weaponDamage: 15)
+        super.init(name, classe: .dwarf, health: 50, weaponDamage: 20)
     }
 }

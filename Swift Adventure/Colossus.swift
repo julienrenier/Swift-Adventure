@@ -13,6 +13,6 @@ class Colossus: Character {
     // MARK: - Initialisation
     
     init(_ name: String) {
-        super.init(name, classe: .colossus, health: 300, weaponDamage: 2)
+        super.init(name, classe: .colossus, health: 150, weaponDamage: 5)
     }
 }

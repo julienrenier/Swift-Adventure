@@ -53,9 +53,9 @@ class Player {
         return selectTarget(ennemies: players)
     }
 
-    // MARK: - Gameplay
-
-    func createAllCharacters() {
+    // MARK: - Initialisation
+    
+    private func createAllCharacters() {
         print("\nDis moi en plus sur ton equipe. ")
         for number in 0..<3 {
             print("\nLa classe du membre numero \(number + 1): ")
@@ -69,11 +69,12 @@ class Player {
             case .colossus:
                 print("Wow il faut lui trouver un nom a sa taille!")
                 characters.append(Colossus(Game.getUniqueName(strings: Character.names)))
+            case .magus:
+                print("Wow il faut lui trouver un nom a sa taille!")
+                characters.append(Magus(Game.getUniqueName(strings: Character.names)))
             }
         }
     }
-
-    // MARK: - Initialisation
 
     init(_ name: String) {
         self.name = name
