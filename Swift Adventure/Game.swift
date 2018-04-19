@@ -53,7 +53,7 @@ class Game {
     // MARK: - Getter
     
     static func getClasse() -> Character.ClassName {
-        print("Combattant, Nain ou Colosse ?")
+        print("Combattant, Nain, Colosse ou Mage ?")
         guard let input = readLine()?.trimmingCharacters(in: .whitespaces).capitalized,
             let className = Character.ClassName(rawValue: input) else {
             return getClasse()

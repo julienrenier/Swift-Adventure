@@ -17,14 +17,23 @@ class Player {
     func printInfo() {
         print("\n\(name)")
         for character in characters {
-            print("    \(character.name) -> \(character.classe) -> \(character.health) ❤️")
+            print("    \(character.name) -> \(character.classe.rawValue) -> \(character.health) ❤️")
         }
+    }
+    
+    private func printClassDescription() {
+        print("\nVoici les classes disponible:")
+        print(" Nain: Puissant mais pas très résistant")
+        print(" Mage: Soigne ses alliés")
+        print(" Colosse: Très résistant mais ne fait pas très mal")
+        print(" Combattant: Un personnage hybride")
     }
     
     // MARK: - Selector
     
     func selectCharacter() -> Character {
-        print("\nChoisissez votre champion pour ce tour \(name) !")
+        print("-----------------------------------------------------")
+        print("\nChoisissez votre champion pour ce tour \(name) ! 🏆")
         printInfo()
         if let championName = readLine(), let champion = characters.first(where: { (character) -> Bool in
             return character.name.lowercased() == championName.trimmingCharacters(in: .whitespaces).lowercased()
@@ -57,6 +66,7 @@ class Player {
     
     private func createAllCharacters() {
         print("\nDis moi en plus sur ton equipe. ")
+        printClassDescription()
         for number in 0..<3 {
             print("\nLa classe du membre numero \(number + 1): ")
             switch Game.getClasse() {
@@ -67,10 +77,10 @@ class Player {
                 print("Il faut lui trouver un petit nom.")
                 characters.append(Dwarf(Game.getUniqueName(strings: Character.names)))
             case .colossus:
-                print("Wow il faut lui trouver un nom a sa taille!")
+                print("Wow il faut lui trouver un nom a sa taille !")
                 characters.append(Colossus(Game.getUniqueName(strings: Character.names)))
             case .magus:
-                print("Wow il faut lui trouver un nom a sa taille!")
+                print("Il nous faut un nom qui inspire la confiance !")
                 characters.append(Magus(Game.getUniqueName(strings: Character.names)))
             }
         }

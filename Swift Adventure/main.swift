@@ -14,7 +14,6 @@ import Foundation
 //Ajouter des couleurs/surbrillance/gras
 //Doc
 //Descriptif personnage
-//Mage
 
 
 let game = Game()
