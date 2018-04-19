@@ -9,9 +9,7 @@
 import Foundation
 
 //TODO
-//promptClass
 //Ajouter index et racourcir le jeu
-//Ajouter des couleurs/surbrillance/gras
 //Doc
 
 

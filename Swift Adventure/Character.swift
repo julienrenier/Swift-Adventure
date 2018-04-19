@@ -25,10 +25,8 @@ class Character {
     
     // MARK: - Gameplay
     
-    ///
-    /// nom, type, description
-    /// return bool, explique le retour
-    func attack(target: Character) -> Bool {
+    /// return if the target is dead
+    func useWeapon(target: Character) -> Bool {
         print("\n\(name) va attaquer \(target.name) et lui infliger \(weaponDamage) points de dommage.")
         target.health -= weaponDamage
         if (target.health <= 0) {

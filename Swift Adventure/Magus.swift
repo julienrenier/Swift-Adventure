@@ -12,7 +12,7 @@ class Magus: Character {
     
     // MARK: - Gameplay
     
-    override func attack(target: Character) -> Bool {
+    override func useWeapon(target: Character) -> Bool {
         print("\n\(name) va soigner \(target.name) et lui donner \(weaponDamage) points de vie.")
         target.health += weaponDamage
         if (target.health <= 0) {
