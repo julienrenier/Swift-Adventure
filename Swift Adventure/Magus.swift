@@ -25,6 +25,6 @@ class Magus: Character {
     // MARK: - Initialisation
     
     init(_ name: String) {
-        super.init(name, classe: .dwarf, health: 75, weaponDamage: 15)
+        super.init(name, classe: .magus, health: 75, weaponDamage: 15)
     }
 }

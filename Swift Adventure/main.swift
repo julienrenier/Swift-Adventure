@@ -13,7 +13,6 @@ import Foundation
 //Ajouter index et racourcir le jeu
 //Ajouter des couleurs/surbrillance/gras
 //Doc
-//Descriptif personnage
 
 
 let game = Game()

@@ -33,21 +33,21 @@ class Game {
         var end = players.count
         
         while (end > 1) {
-            for player in players {
+            for player in players where end > 1 {
                 let champion = player.selectCharacter()
-                let (ennemie, target) = champion.classe == .magus ? player.selectTarget(on: players, faction: .ally)
+                let (ennemy, target) = champion.classe == .magus ? player.selectTarget(on: players, faction: .ally)
                     : player.selectTarget(on: players, faction: .enemy)
                 champion.evolve()
                 if champion.attack(target: target) {
-                    ennemie.characters.remove(at: ennemie.characters.index(where: { $0 == target })!)
-                    if ennemie.characters.isEmpty {
+                    ennemy.characters.remove(at: ennemy.characters.index(where: { $0 == target })!)
+                    if ennemy.characters.count == 0 {
                         end -= 1
                     }
                 }
             }
         }
         if let winner = players.first {
-            print("Bravo \(winner.name) la victoire vous appartient.")
+            print("\nBravo \(winner.name) la victoire vous appartient. 🏅")
         }
     }
     

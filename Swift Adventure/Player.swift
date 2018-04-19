@@ -36,7 +36,7 @@ class Player {
         print("\nChoisissez votre champion pour ce tour \(name) ! 🏆")
         printInfo()
         if let championName = readLine(), let champion = characters.first(where: { (character) -> Bool in
-            return character.name.lowercased() == championName.trimmingCharacters(in: .whitespaces).lowercased()
+            return character.name.capitalized == championName.trimmingCharacters(in: .whitespaces).capitalized
         }) {
             print("\(champion.name) combattra pour vous.")
             return champion
@@ -47,15 +47,24 @@ class Player {
     
     func selectTarget(on players: [Player], faction: Character.Faction) -> (Player, Character) {
         print("\nChoisissez votre cible 🎯")
-        for player in players where player != self {
-            player.printInfo()
-        }
-        let championName = readLine()
-        for player in players where player != self {
-            if let championName = championName, let target = player.characters.first(where: { (character) -> Bool in
-                return character.name.lowercased() == championName.trimmingCharacters(in: .whitespaces).lowercased()
+        if faction == .ally {
+            printInfo()
+            if let championName = readLine()?.trimmingCharacters(in: .whitespaces).capitalized, let target = characters.first(where: { (character) -> Bool in
+                return character.name.capitalized == championName
             }) {
-                return (player, target)
+                return (self, target)
+            }
+        } else {
+            for player in players where player != self {
+                player.printInfo()
+            }
+            let championName = readLine()?.trimmingCharacters(in: .whitespaces).capitalized
+            for player in players where player != self {
+                if let championName = championName, let target = player.characters.first(where: { (character) -> Bool in
+                    return character.name.capitalized == championName
+                }) {
+                    return (player, target)
+                }
             }
         }
         print("Ce n'est pas une cible possible, réessaye.")
@@ -94,14 +103,14 @@ class Player {
     // MARK: Operators
     
     static func == (left: Player, right: Player) -> Bool {
-        if left.name.lowercased() == right.name.lowercased() {
+        if left.name.capitalized == right.name.capitalized {
             return true
         }
         return false
     }
     
     static func != (left: Player, right: Player) -> Bool {
-        if left.name.lowercased() != right.name.lowercased() {
+        if left.name.capitalized != right.name.capitalized {
             return true
         }
         return false
