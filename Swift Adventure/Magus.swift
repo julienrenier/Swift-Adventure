@@ -8,10 +8,14 @@
 
 import Foundation
 
+/// A class champion who can heal his ally.
 class Magus: Champion {
     
     // MARK: - Gameplay
     
+    /// Heal the target.
+    /// - parameter target: The target who will be heal.
+    /// - returns: If the target is dead.
     override func useWeapon(target: Champion) -> Bool {
         print("\n\(name) va soigner \(target.name) et lui donner \(weaponDamage) points de vie.")
         target.health += weaponDamage

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A class champion with a lot of life but minus damage.
 class Colossus: Champion {
     
     // MARK: - Initialisation

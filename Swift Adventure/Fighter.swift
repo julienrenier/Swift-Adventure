@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A hybrid class champion 
 class Fighter: Champion {
 
     // MARK: - Initialisation
