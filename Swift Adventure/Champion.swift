@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// A champion who can attack/heal other champion in the game.
+/// A champion who can attack or heal other champion in the game.
 class Champion {
     /// Champion's name.
     let name: String
@@ -21,16 +21,19 @@ class Champion {
     /// All the champions created name from the beginning.
     static var names = [String]()
     
+    /// All champion's classes.
     enum ClassName: String {
         case fighter = "Combattant", dwarf = "Nain", colossus = "Colosse", magus = "Mage"
     }
     
+    /// All champion's factions.
     enum Faction {
         case enemy, ally
     }
     
     // MARK: - Interface
     
+    /// Print all classes in the game.
     static func printClassDescription() {
         print("\nVoici les classes disponible:")
         print(" Nain: Puissant mais pas très résistant")
@@ -41,7 +44,9 @@ class Champion {
     
     // MARK: - Gameplay
     
-    /// return if the target is dead
+    /// Attack the target.
+    /// - parameter target: The target for this attack.
+    /// - returns: If the target is dead.
     func useWeapon(target: Champion) -> Bool {
         print("\n\(name) va attaquer \(target.name) et lui infliger \(weaponDamage) points de dommage.")
         target.health -= weaponDamage
@@ -52,7 +57,7 @@ class Champion {
         return false
     }
     
-    //config pourcentage
+    /// The champion try to get a better weapon.
     func evolve() {
         if arc4random_uniform(100) >= 75 {
             let bonus = arc4random_uniform(4) + 1
