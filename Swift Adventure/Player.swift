@@ -8,30 +8,28 @@
 
 import Foundation
 
+/// A player in swift adventure.
 class Player {
+    /// Player's name.
     let name: String
-    var characters = [Character]()
+    /// Player's champions.
+    var characters = [Champion]()
 
     // MARK: - Interface
 
+    /// Print all info about his champions.
     func printInfo() {
         print("\n\(name)")
         for character in characters {
-            print("    \(character.name) -> \(character.classe.rawValue) -> \(character.health) ❤️")
+            print("    \(character.name) -> \(character.classeName.rawValue) -> \(character.health) ❤️")
         }
-    }
-    
-    private func printClassDescription() {
-        print("\nVoici les classes disponible:")
-        print(" Nain: Puissant mais pas très résistant")
-        print(" Mage: Soigne ses alliés")
-        print(" Colosse: Très résistant mais ne fait pas très mal")
-        print(" Combattant: Un personnage hybride")
     }
     
     // MARK: - Selector
     
-    func selectCharacter() -> Character {
+    /// Select the player's choice champion.
+    /// - returns: A player's character.
+    func selectCharacter() -> Champion {
         print("-----------------------------------------------------")
         print("\nChoisissez votre champion pour ce tour \(name) ! 🏆")
         printInfo()
@@ -45,7 +43,12 @@ class Player {
         return selectCharacter()
     }
     
-    func selectTarget(on players: [Player], faction: Character.Faction) -> (Player, Character) {
+    /// Select a target regarding the selected champion.
+    /// - parameters:
+    ///     - players: All the players in the game.
+    ///     - faction: Character.Faction for the selected champion.
+    /// - returns: The player and his targeted champion.
+    func selectTarget(players: [Player], faction: Champion.Faction) -> (Player, Champion) {
         print("\nChoisissez votre cible 🎯")
         if faction == .ally {
             printInfo()
@@ -68,29 +71,30 @@ class Player {
             }
         }
         print("Ce n'est pas une cible possible, réessaye.")
-        return selectTarget(on: players, faction: faction)
+        return selectTarget(players: players, faction: faction)
     }
 
     // MARK: - Initialisation
     
+    /// Create all necessary player's champion.
     private func createAllCharacters() {
         print("\nDis moi en plus sur ton equipe. ")
-        printClassDescription()
+        Champion.printClassDescription()
         for number in 0..<3 {
             print("\nLa classe du membre numero \(number + 1): ")
             switch Game.getClasse() {
             case .fighter:
                 print("Quel est le nom de ce valereux combattant ?")
-                characters.append(Fighter(Game.getUniqueName(strings: Character.names)))
+                characters.append(Fighter(Game.getUniqueName(strings: Champion.names)))
             case .dwarf:
                 print("Il faut lui trouver un petit nom.")
-                characters.append(Dwarf(Game.getUniqueName(strings: Character.names)))
+                characters.append(Dwarf(Game.getUniqueName(strings: Champion.names)))
             case .colossus:
                 print("Wow il faut lui trouver un nom a sa taille !")
-                characters.append(Colossus(Game.getUniqueName(strings: Character.names)))
+                characters.append(Colossus(Game.getUniqueName(strings: Champion.names)))
             case .magus:
                 print("Il nous faut un nom qui inspire la confiance !")
-                characters.append(Magus(Game.getUniqueName(strings: Character.names)))
+                characters.append(Magus(Game.getUniqueName(strings: Champion.names)))
             }
         }
     }
