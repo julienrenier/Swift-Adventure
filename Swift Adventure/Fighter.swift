@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Fighter: Character {
+class Fighter: Champion {
 
     // MARK: - Initialisation
     

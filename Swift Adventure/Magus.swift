@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Magus: Character {
+class Magus: Champion {
     
     // MARK: - Gameplay
     
-    override func useWeapon(target: Character) -> Bool {
+    override func useWeapon(target: Champion) -> Bool {
         print("\n\(name) va soigner \(target.name) et lui donner \(weaponDamage) points de vie.")
         target.health += weaponDamage
         if (target.health <= 0) {

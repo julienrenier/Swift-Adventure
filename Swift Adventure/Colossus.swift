@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Colossus: Character {
+class Colossus: Champion {
     
     // MARK: - Initialisation
     

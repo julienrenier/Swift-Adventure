@@ -8,11 +8,17 @@
 
 import Foundation
 
-class Character {
+/// A champion who can attack/heal other champion in the game.
+class Champion {
+    /// Champion's name.
     let name: String
-    let classe: ClassName
+    /// Champion's class name.
+    let classeName: ClassName
+    /// Champion beginning health.
     var health: Int
+    /// Champion's beginning demaged.
     var weaponDamage: Int
+    /// All the champions created name from the beginning.
     static var names = [String]()
     
     enum ClassName: String {
@@ -23,10 +29,20 @@ class Character {
         case enemy, ally
     }
     
+    // MARK: - Interface
+    
+    static func printClassDescription() {
+        print("\nVoici les classes disponible:")
+        print(" Nain: Puissant mais pas très résistant")
+        print(" Mage: Soigne ses alliés")
+        print(" Colosse: Très résistant mais ne fait pas très mal")
+        print(" Combattant: Un personnage hybride")
+    }
+    
     // MARK: - Gameplay
     
     /// return if the target is dead
-    func useWeapon(target: Character) -> Bool {
+    func useWeapon(target: Champion) -> Bool {
         print("\n\(name) va attaquer \(target.name) et lui infliger \(weaponDamage) points de dommage.")
         target.health -= weaponDamage
         if (target.health <= 0) {
@@ -49,22 +65,22 @@ class Character {
 
     init(_ name: String, classe: ClassName, health: Int, weaponDamage: Int) {
         self.name = name
-        self.classe = classe
+        self.classeName = classe
         self.health = health
         self.weaponDamage = weaponDamage
-        Character.names.append(name)
+        Champion.names.append(name)
     }
     
     //MARK: - Operators
     
-    static func == (left: Character, right: Character) -> Bool {
+    static func == (left: Champion, right: Champion) -> Bool {
         if left.name.lowercased() == right.name.lowercased() {
             return true
         }
         return false
     }
     
-    static func != (left: Character, right: Character) -> Bool {
+    static func != (left: Champion, right: Champion) -> Bool {
         if left.name.lowercased() != right.name.lowercased() {
             return true
         }

@@ -36,8 +36,8 @@ class Game {
         while (end > 1) {
             for player in players where end > 1 {
                 let champion = player.selectCharacter()
-                let (ennemy, target) = champion.classe == .magus ? player.selectTarget(on: players, faction: .ally)
-                    : player.selectTarget(on: players, faction: .enemy)
+                let (ennemy, target) = champion.classeName == .magus ? player.selectTarget(players: players, faction: .ally)
+                    : player.selectTarget(players: players, faction: .enemy)
                 champion.evolve()
                 if champion.useWeapon(target: target) {
                     ennemy.characters.remove(at: ennemy.characters.index(where: { $0 == target })!)
@@ -56,10 +56,10 @@ class Game {
     
     // MARK: - Getter
     
-    static func getClasse() -> Character.ClassName {
+    static func getClasse() -> Champion.ClassName {
         print("Combattant, Nain, Colosse ou Mage ?")
         guard let input = readLine()?.trimmingCharacters(in: .whitespaces).capitalized,
-            let className = Character.ClassName(rawValue: input) else {
+            let className = Champion.ClassName(rawValue: input) else {
             return getClasse()
         }
         return className

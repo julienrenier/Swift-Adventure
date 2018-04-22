@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Dwarf: Character {
+class Dwarf: Champion {
 
     // MARK: - Initialisation
     
