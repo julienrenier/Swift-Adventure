@@ -59,7 +59,7 @@ class Champion {
     
     /// The champion try to get a better weapon.
     func evolve() {
-        if arc4random_uniform(100) >= 75 {
+        if arc4random_uniform(100) >= Config.luckPercentage {
             let bonus = arc4random_uniform(4) + 1
             weaponDamage += bonus.hashValue
             print("Chanceux ! \(name) à gagné \(bonus) points sur son arme. 🎁")
