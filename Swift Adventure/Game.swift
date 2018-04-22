@@ -8,16 +8,20 @@
 
 import Foundation
 
+/// The representation of a game.
 class Game {
+    /// All player's game.
     private var players = [Player]()
 
     // MARK: - Interface
 
+    /// Print game presentation.
     private func printLunch() {
         print("\nBonjour, bienvenue dans Swift Adventure! 🗺")
         print("Ecrivez le nombre de personnes qui prendront part à cette partie.")
     }
     
+    /// Perform and print the loading.
     private func loading() {
         print("\nChargement..")
         for _ in 0...25 {
@@ -29,6 +33,7 @@ class Game {
 
     // MARK: - Gameplay
     
+    /// Main loop game.
     func play() {
         var end = players.count
         var turns = 1
@@ -56,6 +61,7 @@ class Game {
     
     // MARK: - Getter
     
+    /// Get class from the input.
     static func getClasse() -> Champion.ClassName {
         print("Combattant, Nain, Colosse ou Mage ?")
         guard let input = readLine()?.trimmingCharacters(in: .whitespaces).capitalized,
@@ -65,6 +71,7 @@ class Game {
         return className
     }
     
+    /// Get an unique name from the imput.
     static func getUniqueName(strings: [String] = [String]()) -> String {
         if let newString = readLine()?.trimmingCharacters(in: .whitespaces).capitalized,
             newString != "", !strings.contains(newString) {
@@ -76,6 +83,8 @@ class Game {
 
     // MARK: - Initialisation
     
+    /// Add player to the game.
+    /// - parameter number: The number of player in the game.
     private func addPlayer(number: Int) {
         print("\nTrès bien, il va donc falloir que vous me passiez vos noms.")
         for _ in 0..<number {
