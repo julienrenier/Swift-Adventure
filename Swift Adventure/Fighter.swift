@@ -1,5 +1,5 @@
 //
-//  Nain.swift
+//  Combattant.swift
 //  Swift Adventure
 //
 //  Created by Julien Renier on 4/10/18.
@@ -8,11 +8,12 @@
 
 import Foundation
 
-class Nain: Character {
+/// A hybrid class champion 
+class Fighter: Champion {
 
     // MARK: - Initialisation
     
     init(_ name: String) {
-        super.init(name, classe: .nain, health: 50, weaponDamage: 15)
+        super.init(name, classe: .fighter, health: 100, weaponDamage: 10)
     }
 }

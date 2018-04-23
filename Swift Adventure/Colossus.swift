@@ -8,11 +8,12 @@
 
 import Foundation
 
-class Colosse: Character {
+/// A class champion with a lot of life but minus damage.
+class Colossus: Champion {
     
     // MARK: - Initialisation
     
     init(_ name: String) {
-        super.init(name, classe: .colosse, health: 300, weaponDamage: 2)
+        super.init(name, classe: .colossus, health: 150, weaponDamage: 5)
     }
 }

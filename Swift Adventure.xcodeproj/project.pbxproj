@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0934509520890A4700A7BE5D /* Magus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0934509420890A4700A7BE5D /* Magus.swift */; };
 		09921D87207CB9A600C7DEA6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D86207CB9A600C7DEA6 /* main.swift */; };
 		09921D8E207CB9DF00C7DEA6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D8D207CB9DF00C7DEA6 /* Player.swift */; };
-		09921D90207CBF5900C7DEA6 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D8F207CBF5900C7DEA6 /* Character.swift */; };
-		09921D92207CC32800C7DEA6 /* Combattant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D91207CC32800C7DEA6 /* Combattant.swift */; };
+		09921D90207CBF5900C7DEA6 /* Champion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D8F207CBF5900C7DEA6 /* Champion.swift */; };
+		09921D92207CC32800C7DEA6 /* Fighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D91207CC32800C7DEA6 /* Fighter.swift */; };
 		09921D95207CCA4A00C7DEA6 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D94207CCA4A00C7DEA6 /* Game.swift */; };
-		09921D97207CFDC700C7DEA6 /* Nain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D96207CFDC700C7DEA6 /* Nain.swift */; };
-		09921D99207CFE4600C7DEA6 /* Colosse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D98207CFE4600C7DEA6 /* Colosse.swift */; };
-		09921D9C207D3EDB00C7DEA6 /* tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D9B207D3EDB00C7DEA6 /* tools.swift */; };
+		09921D97207CFDC700C7DEA6 /* Dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D96207CFDC700C7DEA6 /* Dwarf.swift */; };
+		09921D99207CFE4600C7DEA6 /* Colossus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09921D98207CFE4600C7DEA6 /* Colossus.swift */; };
+		09BD469D208D0D12006769CB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD469C208D0D12006769CB /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,15 +31,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0934509420890A4700A7BE5D /* Magus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magus.swift; sourceTree = "<group>"; };
 		09921D83207CB9A600C7DEA6 /* Swift Adventure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Swift Adventure"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09921D86207CB9A600C7DEA6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		09921D8D207CB9DF00C7DEA6 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		09921D8F207CBF5900C7DEA6 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		09921D91207CC32800C7DEA6 /* Combattant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combattant.swift; sourceTree = "<group>"; };
+		09921D8F207CBF5900C7DEA6 /* Champion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Champion.swift; sourceTree = "<group>"; };
+		09921D91207CC32800C7DEA6 /* Fighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fighter.swift; sourceTree = "<group>"; };
 		09921D94207CCA4A00C7DEA6 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		09921D96207CFDC700C7DEA6 /* Nain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nain.swift; sourceTree = "<group>"; };
-		09921D98207CFE4600C7DEA6 /* Colosse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colosse.swift; sourceTree = "<group>"; };
-		09921D9B207D3EDB00C7DEA6 /* tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tools.swift; sourceTree = "<group>"; };
+		09921D96207CFDC700C7DEA6 /* Dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarf.swift; sourceTree = "<group>"; };
+		09921D98207CFE4600C7DEA6 /* Colossus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colossus.swift; sourceTree = "<group>"; };
+		09BD469C208D0D12006769CB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +75,13 @@
 			children = (
 				09921D86207CB9A600C7DEA6 /* main.swift */,
 				09921D8D207CB9DF00C7DEA6 /* Player.swift */,
-				09921D9B207D3EDB00C7DEA6 /* tools.swift */,
-				09921D8F207CBF5900C7DEA6 /* Character.swift */,
-				09921D98207CFE4600C7DEA6 /* Colosse.swift */,
-				09921D96207CFDC700C7DEA6 /* Nain.swift */,
-				09921D91207CC32800C7DEA6 /* Combattant.swift */,
+				09921D8F207CBF5900C7DEA6 /* Champion.swift */,
+				0934509420890A4700A7BE5D /* Magus.swift */,
+				09921D98207CFE4600C7DEA6 /* Colossus.swift */,
+				09921D91207CC32800C7DEA6 /* Fighter.swift */,
+				09921D96207CFDC700C7DEA6 /* Dwarf.swift */,
 				09921D94207CCA4A00C7DEA6 /* Game.swift */,
+				09BD469C208D0D12006769CB /* Config.swift */,
 			);
 			path = "Swift Adventure";
 			sourceTree = "<group>";
@@ -140,14 +143,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09921D99207CFE4600C7DEA6 /* Colosse.swift in Sources */,
-				09921D92207CC32800C7DEA6 /* Combattant.swift in Sources */,
+				09921D99207CFE4600C7DEA6 /* Colossus.swift in Sources */,
+				09921D92207CC32800C7DEA6 /* Fighter.swift in Sources */,
 				09921D95207CCA4A00C7DEA6 /* Game.swift in Sources */,
-				09921D90207CBF5900C7DEA6 /* Character.swift in Sources */,
-				09921D97207CFDC700C7DEA6 /* Nain.swift in Sources */,
+				0934509520890A4700A7BE5D /* Magus.swift in Sources */,
+				09921D90207CBF5900C7DEA6 /* Champion.swift in Sources */,
+				09921D97207CFDC700C7DEA6 /* Dwarf.swift in Sources */,
+				09BD469D208D0D12006769CB /* Config.swift in Sources */,
 				09921D8E207CB9DF00C7DEA6 /* Player.swift in Sources */,
 				09921D87207CB9A600C7DEA6 /* main.swift in Sources */,
-				09921D9C207D3EDB00C7DEA6 /* tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

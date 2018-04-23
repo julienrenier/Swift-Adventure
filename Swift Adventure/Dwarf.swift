@@ -1,5 +1,5 @@
 //
-//  Combattant.swift
+//  Nain.swift
 //  Swift Adventure
 //
 //  Created by Julien Renier on 4/10/18.
@@ -8,11 +8,12 @@
 
 import Foundation
 
-class Combattant: Character {
+/// A class champion with a lot of damage but with a little life.
+class Dwarf: Champion {
 
     // MARK: - Initialisation
     
     init(_ name: String) {
-        super.init(name, classe: .combattant, health: 100, weaponDamage: 10)
+        super.init(name, classe: .dwarf, health: 50, weaponDamage: 20)
     }
 }
