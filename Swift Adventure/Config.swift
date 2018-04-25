@@ -8,6 +8,6 @@
 
 import Foundation
 
-class Config {
+struct Config {
     static let luckPercentage = 75
 }
